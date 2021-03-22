@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+
+    <style>
+      .container {
+        width: 960px;
+        margin: 0 auto;
+        padding-top: 10%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .switch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .switch .switch-text {
+        padding-right: 0.3rem;
+        font-size: 1.2rem;
+      }
+      .switch .switch-wrapper {
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        position: relative;
+      }
+
+      .switch .switch-wrapper .switch-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 40px;
+        background-color: #475569;
+
+      }
+      .switch .switch-wrapper input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .switch .switch-wrapper .switch-button::before {
+        content: "";
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        border-radius: 50%;
+        transition: .4s all ease;
+        background-color:aliceblue;
+      }
+
+      .switch .switch-wrapper input:checked + .switch-button {
+        background-color: #58A721;
+      }
+
+      .switch .switch-wrapper input:checked + .switch-button::before {
+        transform: translateX(26px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label class="switch">
+        <span class="switch-text">Assistir todos os videos</span>
+        <div class="switch-wrapper">
+          <input type="checkbox" name="watch"/>
+          <span class="switch-button"></span>
+        </div>
+      </label>
+    </div>
+
+
+  </body>
+</html>
